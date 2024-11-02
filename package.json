@@ -1,0 +1,45 @@
+{
+  "name": "datalouna",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint --fix --ext .js,.jsx .",
+    "build": "tsc -p .",
+    "start": "NODE_ENV=prod node dist/index.js",
+    "dev": "NODE_ENV=dev tsx watch --clear-screen=false --env-file=.env src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.23.3",
+    "@babel/preset-env": "^7.23.6",
+    "@types/node": "^22.8.5",
+    "@types/pg": "^8.11.10",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.55.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-node": "^11.1.0",
+    "fastify-tsconfig": "^2.0.0",
+    "knex": "^3.1.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^8.3.0",
+    "@fastify/swagger": "^7.4.0",
+    "@mgcrea/fastify-session": "^0.16.0",
+    "@mgcrea/fastify-session-redis-store": "^0.11.0",
+    "awilix": "^10.0.2",
+    "fastify": "^4.19.2",
+    "fastify-plugin": "^3.0.0",
+    "ioredis": "^5.4.1",
+    "pg": "^8.11.3"
+  }
+}
