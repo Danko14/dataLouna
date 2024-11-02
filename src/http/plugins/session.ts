@@ -3,8 +3,9 @@ import fastifyCookie from '@fastify/cookie'
 import fastifySession, { Session } from '@mgcrea/fastify-session'
 import { RedisStore } from '@mgcrea/fastify-session-redis-store'
 import Redis from 'ioredis'
+import { FastifyPluginOptions } from 'fastify'
 
-export default fp(async (fastify, { sessionTTL, redisConfig }) => {
+export default fp<FastifyPluginOptions>(async (fastify, { sessionTTL, redisConfig }) => {
     fastify.register(fastifyCookie)
     fastify.register(fastifySession, {
         store: new RedisStore({ client: new Redis(redisConfig), prefix: 'sess:', ttl: sessionTTL }),

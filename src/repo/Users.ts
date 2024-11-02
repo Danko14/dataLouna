@@ -1,7 +1,7 @@
 import pkg from 'pg'
 import { IUsersRepo } from '../interface/repo/IUsers'
 import { User, UserId } from '../types/users'
-import { UserDbCols } from './dbcols'
+import { UserDbCols } from './dbcols.js'
 
 class DataMapper {
     static mapRaw = (r: any): User => ({
@@ -9,6 +9,7 @@ class DataMapper {
         login: r[UserDbCols.login],
         passwordHash: r[UserDbCols.passwordHash],
         salt: r[UserDbCols.salt],
+        balance: r[UserDbCols.balance],
     })
 }
 

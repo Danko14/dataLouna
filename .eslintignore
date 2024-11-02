@@ -47,3 +47,5 @@ tmp
 /dist
 
 knexfile.js
+
+*/assets

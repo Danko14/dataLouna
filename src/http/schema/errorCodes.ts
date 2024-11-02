@@ -31,6 +31,14 @@ export const errorCodes = {
         },
         required: ['message'],
     },
+    418: {
+        type: 'object',
+        description: 'I\'m a teapot',
+        properties: {
+            message: { type: 'string' },
+        },
+        required: ['message'],
+    },
     503: {
         type: 'object',
         description: 'Service unavailable',

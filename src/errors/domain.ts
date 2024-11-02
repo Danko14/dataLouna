@@ -33,3 +33,9 @@ export class DuplicateData extends DomainError {
         super(message)
     }
 }
+
+export class IMaTeapot extends DomainError {
+    constructor(message: string = 'Why you even should have done this..?') {
+        super(message)
+    }
+}

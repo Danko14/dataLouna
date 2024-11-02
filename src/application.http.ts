@@ -9,6 +9,7 @@ import user from './http/controllers/user.js'
 import { config } from './config.js'
 import { TConfig } from './types/config.js'
 import session from './http/plugins/session.js'
+import items from './http/controllers/items.js'
 
 export class HttpApplication extends Application {
     server: FastifyInstance
@@ -41,6 +42,7 @@ export class HttpApplication extends Application {
         await this.server.register(session, { sessionTTL, redisConfig })
         if (nodeEnv === 'dev') await this.server.register(swagger)
         await this.server.register(user, this.getControllerOptions('/user'))
+        await this.server.register(items, this.getControllerOptions('/items'))
     }
 
     async start() {

@@ -5,4 +5,5 @@ export type User = {
   login: string
   passwordHash: string
   salt: string
+  balance: number
 }

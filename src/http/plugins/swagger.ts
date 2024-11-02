@@ -1,7 +1,8 @@
 import fastifySwagger from '@fastify/swagger'
+import { FastifyPluginOptions } from 'fastify'
 import fp from 'fastify-plugin'
 
-export default fp(async fastify => {
+export default fp<FastifyPluginOptions>(async fastify => {
     fastify.register(fastifySwagger, {
         routePrefix: '/docs',
         swagger: {

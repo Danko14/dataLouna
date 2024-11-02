@@ -2,9 +2,9 @@ import { Session } from '@mgcrea/fastify-session'
 import assert from 'assert'
 import { IUsersRepo } from '../interface/repo/IUsers'
 import { IUserService } from '../interface/services/IUser'
-import { ActorEntity, ActorTypeEnum } from '../entities/ActorEntry'
-import { Forbidden, InvalidRequestError } from '../errors/domain'
-import { PasswordManager } from '../utils/PasswordManager'
+import { ActorEntity, ActorTypeEnum } from '../entities/ActorEntry.js'
+import { Forbidden, InvalidRequestError } from '../errors/domain.js'
+import { PasswordManager } from '../utils/PasswordManager.js'
 
 export class UserService implements IUserService {
     private repo: IUsersRepo

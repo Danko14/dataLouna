@@ -6,6 +6,8 @@ import { IUserService } from './interface/services/IUser.js'
 import { UserService } from './services/User.js'
 import { createRedisStore } from './cache/sessionStore.js'
 import { createRedisClient } from './cache/redis.js'
+import { ItemsRepo } from './repo/Items.js'
+import { ItemsService } from './services/Items.js'
 
 const container = awilix.createContainer<{ userService: IUserService }>({ strict: true })
 
@@ -16,7 +18,9 @@ container.register('redis', awilix.asFunction(createRedisClient).singleton())
 container.register('sessionStore', awilix.asFunction(createRedisStore).singleton())
 
 container.register('usersRepo', awilix.asClass(UsersRepo).singleton())
+container.register('itemsRepo', awilix.asClass(ItemsRepo).singleton())
 
 container.register('userService', awilix.asClass(UserService).scoped())
+container.register('itemsService', awilix.asClass(ItemsService).scoped())
 
 export { container }

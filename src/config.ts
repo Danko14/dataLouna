@@ -9,9 +9,9 @@ export const config: TConfig = {
     pg: {
         host: process.env.PG_HOST ?? 'postgres',
         port: Number(process.env.PG_PORT) ?? 5432,
-        user: process.env.PG_USERNAME ?? 'pony',
-        password: process.env.PG_PASSWORD ?? '',
-        database: process.env.PG_DATABASE ?? 'pony',
+        user: process.env.POSTGRES_USERNAME ?? 'postgres',
+        password: process.env.POSTGRES_PASSWORD ?? '',
+        database: process.env.PG_DATABASE ?? 'postgres',
         pool: {
             min: Number(process.env.DB_POOL_MIN ?? 0),
             max: Number(process.env.DB_POOL_MAX ?? 2),

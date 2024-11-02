@@ -36,6 +36,12 @@ export class Conflict extends HttpError {
     }
 }
 
+export class IMaTeapotError extends HttpError {
+    constructor(message: string = '...') {
+        super(message, 418)
+    }
+}
+
 export class TooEarly extends HttpError {
     constructor(message: string = 'Too early') {
         super(message, 425)
